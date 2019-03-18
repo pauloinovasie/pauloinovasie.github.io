@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browser Notification</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (() => {
+            if (Notification.permission !== 'granted') {
+                Notification.requestPermission();
+            } else {
+                setTimeout(() => {
+                    new Notification('Finanz', {
+                        body: 'Texto da notificação',
+                        icon: 'https://media.fstatic.com/aRrSkoA4U8ws54gCHXJBzVrfU9s=/210x312/smart/media/artists/avatar/2015/11/nicolas-cage_a1706_LHoFet3.jpg'
+                    });
+                }, 5000);
+            }
+        })();
+    </script>
+</body>
+</html>
